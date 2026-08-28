@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amanuel Dinku | Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --accent: #10b981;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 0 1.5rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 4rem 0; }
+    
+    /* Utility Styles */
+    a { color: inherit; text-decoration: none; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary); color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: 0.2s; }
+    .btn:hover { background: var(--primary-hover); }
+    .btn-secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .btn-secondary:hover { background: var(--border); }
+    .badge { background: rgba(59, 130, 246, 0.1); color: var(--primary); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; border: 1px solid rgba(59, 130, 246, 0.2); }
+    .tag { background: var(--border); color: var(--muted); padding: 0.2rem 0.6rem; border-radius: 0.25rem; font-size: 0.8rem; }
+    section { margin-bottom: 5rem; }
+    h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; }
+
+    /* Hero Section */
+    .hero { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .hero-content { max-width: 600px; }
+    .hero h1 { font-size: 2.75rem; font-weight: 700; line-height: 1.2; margin: 0.75rem 0; }
+    .hero p { font-size: 1.125rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .hero-btns { display: flex; gap: 1rem; }
+    .avatar { width: 120px; height: 120px; border-radius: 50%; border: 2px solid var(--primary); object-fit: cover; }
+
+    /* Capabilities Section */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .service-card { background: var(--card-bg); border: 1px solid var(--border); padding: 1.25rem; border-radius: 0.75rem; font-weight: 500; }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+
+    /* Projects Section */
+    .project-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 1rem; padding: 2rem; margin-bottom: 2rem; }
+    .hero-project { border-color: var(--primary); position: relative; }
+    .hero-tag { position: absolute; top: -12px; right: 24px; background: var(--primary); color: white; padding: 0.1rem 0.75rem; border-radius: 0.25rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+    .project-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .project-desc { color: var(--muted); margin-bottom: 1rem; }
+    .project-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 0.5rem; }
+    .project-details ul { list-style: none; }
+    .project-details li::before { content: "✓ "; color: var(--accent); }
+    .project-links { display: flex; gap: 1rem; margin-top: 1.5rem; }
+
+    /* Process Section */
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+    .process-step { background: var(--card-bg); border: 1px solid var(--border); padding: 1.5rem; border-radius: 0.75rem; }
+    .step-num { color: var(--primary); font-weight: 700; font-size: 0.875rem; margin-bottom: 0.5rem; }
+
+    /* About & CTA Section */
+    .about-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; color: var(--muted); }
+    .cta-card { background: linear-gradient(135deg, #1e1b4b 0%, var(--card-bg) 100%); border: 1px solid var(--primary); text-align: center; padding: 3rem 1.5rem; border-radius: 1rem; }
+
+    @media (max-width: 640px) {
+      .hero { flex-direction: column-reverse; text-align: center; }
+      .hero-btns { justify-content: center; }
+      .project-details { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <section class="hero">
+      <div class="hero-content">
+        <span class="badge">Open to Work</span>
+        <h1>Hi, I’m Amanuel Dinku</h1>
+        <p>A Full-Stack Developer who builds fast, modern web experiences. I turn complex ideas into clean, responsive, user-friendly applications.</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn">View Projects</a>
+          <a href="#" class="btn btn-secondary">Download CV</a>
+        </div>
+      </div>
+      <img src="profile.png" alt="Amanuel Dinku" class="avatar">
+    </section>
+
+    <section>
+      <h2>What I Can Do</h2>
+      <div class="services-grid">
+        <div class="service-card">⚡ Responsive Websites</div>
+        <div class="service-card">🎨 UI/UX Implementation</div>
+        <div class="service-card">🔌 REST & GraphQL APIs</div>
+        <div class="service-card">🗄️ Database Architecture</div>
+        <div class="service-card">🚀 Performance Optimization</div>
+        <div class="service-card">🔐 Auth & Security</div>
+      </div>
+      <div class="tech-stack">
+        <span style="color: var(--muted); font-size: 0.9rem; margin-right: 0.5rem;">Tech Stack:</span>
+        <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span>
+        <span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">PostgreSQL</span>
+        <span class="tag">Tailwind CSS</span><span class="tag">Git</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+
+      <div class="project-card hero-project">
+        <span class="hero-tag">Featured Project</span>
+        <h3 class="project-title">JobFlow — Job Application Tracker</h3>
+        <p class="project-desc">A full-stack productivity tool built to solve the messy job search process by tracking applications, interview dates, and offer metrics in real time.</p>
+        
+        <div class="project-details">
+          <div>
+            <strong style="font-size: 0.9rem;">Key Features Built:</strong>
+            <ul style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted);">
+              <li>JWT Authentication & Protected Routes</li>
+              <li>Interactive Drag-and-Drop Application Board</li>
+              <li>Dynamic Analytics & Reminders System</li>
+            </ul>
+          </div>
+          <div>
+            <strong style="font-size: 0.9rem;">My Contribution:</strong>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--muted);">Architected the entire database schema, implemented state management with Redux Toolkit, and built custom analytics charts.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+          <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">Tailwind</span>
+        </div>
+
+        <div class="project-links">
+          <a href="#" class="btn">Live Demo →</a>
+          <a href="#" class="btn btn-secondary">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3 class="project-title">DevPulse — Developer Community API</h3>
+        <p class="project-desc">A scalable backend service designed to aggregate coding discussions, handle user interactions, and serve real-time notifications.</p>
+        
+        <div style="display: flex; gap: 0.5rem; margin: 1rem 0;">
+          <span class="tag">TypeScript</span><span class="tag">Express</span><span class="tag">Redis</span><span class="tag">Docker</span>
+        </div>
+
+        <div class="project-links">
+          <a href="#" class="btn btn-secondary">Live Demo →</a>
+          <a href="#" class="btn btn-secondary">GitHub →</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>How I Work</h2>
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-num">01 — UNDERSTAND</div>
+          <p style="font-size: 0.9rem; color: var(--muted);">Analyze business goals, core requirements, and user needs first.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02 — DESIGN</div>
+          <p style="font-size: 0.9rem; color: var(--muted);">Map component hierarchy, database schemas, and intuitive UI paths.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03 — BUILD</div>
+          <p style="font-size: 0.9rem; color: var(--muted);">Write clean, testable code adhering to modern web practices.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04 — DEPLOY</div>
+          <p style="font-size: 0.9rem; color: var(--muted);">Ship with CI/CD pipelines, optimize metrics, and monitor stability.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>About Me</h2>
+      <p style="color: var(--muted);">I'm a developer passionate about building useful digital products. I enjoy turning complex problems into simple, intuitive experiences and continuously improving my skills through real-world projects.</p>
+      
+      <div class="about-meta">
+        <div>📍 <strong>Location:</strong> Addis Ababa, Ethiopia</div>
+        <div>💼 <strong>Experience:</strong> 2+ Years Building Web Applications</div>
+        <div>🎓 <strong>Education:</strong> B.Sc. in Computer Science</div>
+        <div>🌎 <strong>Remote Work:</strong> Available Immediately</div>
+      </div>
+    </section>
+
+    <section class="cta-card">
+      <h2 style="margin-bottom: 0.5rem;">Have a project in mind or looking for a developer?</h2>
+      <p style="color: var(--muted); margin-bottom: 1.5rem;">I am currently open to full-time, contract, or remote engineering roles.</p>
+      <a href="mailto:amanuel@example.com" class="btn" style="font-size: 1.1rem; padding: 0.85rem 2rem;">Get in Touch — amandinku@gmail.com</a>
+    </section>
+
+  </div>
+</body>
+</html>
